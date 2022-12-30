@@ -1,0 +1,28 @@
+- 테스트 결과
+
+seq01
+> - 객체 내에 @PostConstruct, @PreDestroy 적용.<br>
+> - 스프링 공식 권장 방식.<br>
+> - 외부라이브러리 적용 불가. 외부라이브러리에는 @Bean 옵션 적용.<br>
+
+<p>
+16:36:06.682 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5066d65f
+16:36:06.690 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+16:36:06.751 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+16:36:06.752 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+16:36:06.753 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+16:36:06.754 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+16:36:06.755 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+16:36:06.758 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'beanLifeCycleTest04.LifeCycleConfig03'
+16:36:06.760 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'networkClient'
+생성자 호출, url = null
+connect: null
+call: null message = 초기화 연결 메시지
+NetworkClient01 set url
+NetworkClient.init
+connect: http://spring-hello.dev
+call: http://spring-hello.dev message = 초기화 연결 메시지
+16:36:06.777 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@5066d65f, started on Fri Dec 30 16:36:06 KST 2022
+NetworkClient.close
+close: http://spring-hello.dev
+</p>

@@ -1,0 +1,30 @@
+- 테스트 결과
+
+seq01
+> - 초기화 메서드가 주입 완료 후에 호출이 됨.<br>
+> - 스프링 컨테이너 종료가 호출되자 소멸 메소드 호출 됨.
+
+<p>
+15:44:46.770 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5066d65f
+15:44:46.778 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+15:44:46.841 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+15:44:46.843 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+15:44:46.843 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+15:44:46.844 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+15:44:46.846 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+15:44:46.848 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'beanLifeCycleTest02.LifeCycleConfig02'
+15:44:46.851 [Test worker] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'networkClient'
+생성자 호출, url = null
+connect: null
+call: null message = 초기화 연결 메시지
+NetworkClient01 set url
+connect: http://spring-hello.dev
+call: http://spring-hello.dev message = 초기화 연결된 메시지
+15:44:46.867 [Test worker] DEBUG org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@5066d65f, started on Fri Dec 30 15:44:46 KST 2022
+close: http://spring-hello.dev
+</p>
+
+초기화, 소멸 인터페이스 단점
+
+> - 이 인터페이스는 스프링 전용 인터페이스로 코드가 스프링 인터페이스에 의존<br>
+> - 외부 라이브러리에는 적용이 어려움<br>
